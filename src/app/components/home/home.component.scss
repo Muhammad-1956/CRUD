@@ -1,0 +1,25 @@
+.product{
+  border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 20px;
+    div{
+      width: calc(60% / 2);
+    }
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap:4px ;
+}
+.th-actions {
+  text-align: right;
+  padding-right: 95px;
+}
+.custom-table {
+  thead {
+    th {
+    background-color: rgba(191, 189, 189, 0.441)
+    }
+  }
+}

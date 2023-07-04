@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="d-felx p-2">
+    <a class="btn btn-success" [routerLink]="['/add']">Add New Product</a>
+  </div>
+  <hr>
+  <p *ngIf="products.length == 0" else table>No Available Products</p>
+  <table #table class="table custom-table">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Product Description</th>
+        <th>Product Price</th>
+        <th class="th-actions">Actions</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let product of products;">
+      <tr>
+        <td>{{ product.name | titlecase }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.price | currency }}</td>
+        <td class="action-buttons">
+          <button class="btn btn-primary" [routerLink]="['/update',product.id]">View</button>
+          <button class="btn btn-danger" (click)="showAlert(product)">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
